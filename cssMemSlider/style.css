@@ -1,0 +1,72 @@
+.slider-wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+input{
+    display: none;
+}
+.slider-inner{
+    max-width: 100%;
+    height: calc(100vh - 100px);
+overflow: hidden;
+}
+.slider-img > img{
+    display: none;
+    object-fit: cover;
+    transition: 0.5s;
+}
+/* .slider-img> img:first-child{
+    display: block;
+} */
+.slider-img{
+display: flex;
+width: 100%;
+height: 100%;
+}
+.slider-text{
+    display: none;
+    transition: 0.5s;
+}
+.slider-controls{
+    display: flex;
+}
+.slider-controls > label > span{
+    display: flex;
+    border: solid 2px red;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin: 0 7px;
+}
+.slider-controls > label{
+  padding: 5px;
+  cursor: pointer;
+  transition: 1s;
+}
+.slider-controls > label > span:hover{
+    background-color: red;
+    border: solid 2px red;
+}
+#list_1:checked ~ .slider-inner > .slider-img> .img_1,
+#list_2:checked ~ .slider-inner > .slider-img> .img_2,
+#list_3:checked ~ .slider-inner > .slider-img> .img_3,
+#list_4:checked ~ .slider-inner > .slider-img> .img_4{
+    display: block;
+}
+
+#list_1:checked ~ .slider-excerpt > .text_1,
+#list_2:checked ~ .slider-excerpt > .text_2,
+#list_3:checked ~ .slider-excerpt > .text_3,
+#list_4:checked ~ .slider-excerpt > .text_4{
+    display: block;
+}
+#list_1:checked ~ .slider-controls > [for="list_1"]> span,
+#list_2:checked ~ .slider-controls > [for="list_2"]> span,
+#list_3:checked ~ .slider-controls > [for="list_3"]> span,
+#list_4:checked ~ .slider-controls > [for="list_4"]> span{
+    background-color: red;
+}
