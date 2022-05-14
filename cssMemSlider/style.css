@@ -17,7 +17,7 @@ overflow: hidden;
 .slider-img > img{
     display: none;
     object-fit: cover;
-    transition: 0.5s;
+    transition: 2s;
 }
 /* .slider-img> img:first-child{
     display: block;
@@ -29,7 +29,9 @@ height: 100%;
 }
 .slider-text{
     display: none;
-    transition: 0.5s;
+    
+animation: 3s ease-in 1s infinite reverse both running slidein;
+
 }
 .slider-controls{
     display: flex;
@@ -47,10 +49,24 @@ height: 100%;
   cursor: pointer;
   transition: 1s;
 }
-.slider-controls > label > span:hover{
-    background-color: red;
+.slider-controls > label > span{
+    transition: 1s;
     border: solid 2px red;
+    background-color:white;
 }
+
+
+.slider-controls > label > span:hover{
+    box-shadow: inset -1em 0 0 0 red, inset 1em 0 0 0 red;
+    
+}
+.slider-controls > label > span:active{
+    -webkit-box-shadow: 0px 0px 2em 1em rgba(243, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 2em 1em rgba(243, 0, 0, 1);
+    box-shadow: 0px 0px 2em 1em rgba(243, 0, 0, 1);
+   transition: 1s;
+}
+
 #list_1:checked ~ .slider-inner > .slider-img> .img_1,
 #list_2:checked ~ .slider-inner > .slider-img> .img_2,
 #list_3:checked ~ .slider-inner > .slider-img> .img_3,
@@ -68,5 +84,6 @@ height: 100%;
 #list_2:checked ~ .slider-controls > [for="list_2"]> span,
 #list_3:checked ~ .slider-controls > [for="list_3"]> span,
 #list_4:checked ~ .slider-controls > [for="list_4"]> span{
-    background-color: red;
+    background-color: rgb(243, 0, 0);
+   
 }
