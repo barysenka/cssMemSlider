@@ -10,18 +10,20 @@ input{
     display: none;
 }
 .slider-inner{
-    max-width: 100%;
+    width: calc(100vw - 200px);
     height: calc(100vh - 100px);
 overflow: hidden;
 }
 .slider-img > img{
-    display: none;
-    object-fit: cover;
-    transition: 2s;
+ 
+object-fit: cover;
+transition: 2s;
+opacity: 0;
+z-index: 0;
+transform: scale(1.5);
+transition: transform ease-in-out .5s, opacity ease-in-out .5s;
 }
-/* .slider-img> img:first-child{
-    display: block;
-} */
+
 .slider-img{
 display: flex;
 width: 100%;
@@ -61,17 +63,25 @@ animation: 3s ease-in 1s infinite reverse both running slidein;
     
 }
 .slider-controls > label > span:active{
-    -webkit-box-shadow: 0px 0px 2em 1em rgba(243, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 2em 1em rgba(243, 0, 0, 1);
     box-shadow: 0px 0px 2em 1em rgba(243, 0, 0, 1);
    transition: 1s;
 }
-
+.img_2{
+    margin-left: -70%;
+}
+.img_3{
+    margin-left: -70%;
+}
+.img_4{
+    margin-left: -70%;
+}
 #list_1:checked ~ .slider-inner > .slider-img> .img_1,
 #list_2:checked ~ .slider-inner > .slider-img> .img_2,
 #list_3:checked ~ .slider-inner > .slider-img> .img_3,
 #list_4:checked ~ .slider-inner > .slider-img> .img_4{
-    display: block;
+	opacity: 1;
+	z-index: 1;
+	transform: scale(1);
 }
 
 #list_1:checked ~ .slider-excerpt > .text_1,
@@ -79,6 +89,7 @@ animation: 3s ease-in 1s infinite reverse both running slidein;
 #list_3:checked ~ .slider-excerpt > .text_3,
 #list_4:checked ~ .slider-excerpt > .text_4{
     display: block;
+    transition: 1s;
 }
 #list_1:checked ~ .slider-controls > [for="list_1"]> span,
 #list_2:checked ~ .slider-controls > [for="list_2"]> span,
